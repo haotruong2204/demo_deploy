@@ -1,0 +1,29 @@
+<div class="row" data-controller="chat">
+  <div class="col-6 px-0 shadow">
+   <table>
+    <tr>
+      <td>
+        <div class="name">
+          <h1 class="mb-0"><span><%= @chat_room.name %></span></h1>
+        </div>
+      </td>
+    </tr>
+    <tr>
+     <td>
+      <div class="chat chat-rom-id" id="chat-list-<%= @chat_room.id %>" data-chat-room-id=<%= @chat_room.id %>>
+        <% @chats.each do |chat| %>
+          <%= render "chats/chat", chat: chat %>
+        <% end %>
+      </div>
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <div class="msg">
+        <input placeholder="Chém gió đi bạn ơi ..." type="text" data-chat-room-id="<%= @chat_room.id  %>" name="chat[content]" data-action="keypress.enter->chat#submitCreate">
+      </div>
+     </td>
+    </tr>
+    </table>
+  </div>
+</div>

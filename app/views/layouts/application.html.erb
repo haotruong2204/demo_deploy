@@ -8,6 +8,139 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+      body{
+        height: 100vh;
+        display: flex;
+        background: antiquewhite;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+
+      .row{
+        justify-content: center;
+        margin: auto;
+        width: 800px;
+        height: 600px;
+      }
+
+      .col-4{
+        background: #333;
+      }
+
+      table{
+        width: 100%;
+      }
+
+      td{
+        height: 40px;
+        padding: 15px;
+        line-height: 200%;
+        color:#aaa;
+        font-size: 0.5rem;
+        position: relative;
+      }
+
+      /* right */
+      .col-6{
+        background: #f6f6f6;
+        overflow-y: auto;
+      }
+
+      .col-6 tr:nth-child(1){
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important ;
+      }
+
+      .name{
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        color: green;
+      }
+      
+      .col-6 i{
+        padding: 10px;
+      }
+
+      .col-6 tr:nth-child(2){
+        border-bottom: 1px solid #ccc;
+      }
+
+      .chat{
+        height: 400px;
+        overflow-y: auto;
+      }
+
+      .chat img{
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+      }
+
+      .dialog{
+          padding:3%;
+          margin-right: 10px;
+          max-width: 250px;
+          border-radius: 0.5rem;
+          position: relative;
+          background: #ccc;
+          color: black;
+      }
+      
+      .dialog::before{
+        content: "";
+        position: absolute;
+        border-top: 10px solid transparent;
+        border-bottom: 10px solid transparent;
+      }
+
+      .other,.self{
+        margin-bottom:20px;
+        display: flex;
+      }
+
+      .other .dialog::before{
+        left: -5%;
+        border-right: 15px solid #ccc;
+      }
+
+      .self .dialog::before{
+        right: -5%;
+        border-left: 15px solid  #9eea9e;
+      }
+
+      .self{
+        flex-direction: row-reverse;
+      }
+
+      .self .dialog{
+        background: #9eea9e;
+        margin: 0 15px;
+        font-size: 14px;
+      }
+
+      .chat p{
+        align-self: flex-end;
+        margin-bottom:0;
+      }
+      .read{
+        transform: translate(30px,30px);
+      }
+
+      .msg{
+        height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .msg input{
+        background-color: #f6f6f6!important;
+        border: 1px solid gray;
+        height: 40px;
+        border-radius: 8px;
+      }  
+    </style>
   </head>
 
   <body>
